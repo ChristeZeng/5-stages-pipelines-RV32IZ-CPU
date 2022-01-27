@@ -1,0 +1,182 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Wed Jun  9 20:16:03 2021
+| Host         : BCCTs-LAPTOP running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
+| Design       : Top
+| Device       : xc7k160t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   104 |
+|    Minimum number of control sets                        |   104 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   117 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   104 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |    33 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    57 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              23 |            5 |
+| No           | No                    | Yes                    |              28 |            7 |
+| No           | Yes                   | No                     |             535 |          230 |
+| Yes          | No                    | No                     |               6 |            3 |
+| Yes          | No                    | Yes                    |             992 |          465 |
+| Yes          | Yes                   | No                     |             155 |           52 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------+--------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|            Clock Signal           |                Enable Signal               |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------+--------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|  core/IF_ID2/IMemData_reg[5]_1[0] |                                            | core/IF_ID2/AR[0]                         |                1 |              1 |         1.00 |
+|  inputter/clk_IBUF_BUFG           | inputter/sw[15]_i_1_n_0                    |                                           |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[5]_1[1] |                                            | core/IF_ID2/AS[0]                         |                1 |              1 |         1.00 |
+|  inputter/clk_IBUF_BUFG           | inputter/key_x[4]_i_2_n_0                  | inputter/key_x[4]_i_1_n_0                 |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[4]_0    |                                            | core/IF_ID2/IMemData_reg[6]_4             |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[6]_0    |                                            | core/IF_ID2/IMemData_reg[1]_3             |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[1]_1[0] |                                            | core/IF_ID2/IMemData_reg[1]_2[0]          |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[1]_1[1] |                                            | core/IF_ID2/IMemData_reg[1]_2[1]          |                1 |              1 |         1.00 |
+|  core/IF_ID2/IMemData_reg[6]_3[0] |                                            |                                           |                1 |              2 |         2.00 |
+|  core/IF_ID2/IMemData_reg[3]_1    |                                            | core/IF_ID2/IMemData_reg[4]_1             |                1 |              2 |         2.00 |
+|  core/IF_ID2/IMemData_reg[3]_0    |                                            | core/IF_ID2/IMemData_reg[2]_3             |                1 |              2 |         2.00 |
+|  inputter/clk_IBUF_BUFG           | inputter/key_temp2[4]_i_2_n_0              | inputter/key_temp2                        |                1 |              5 |         5.00 |
+|  inputter/clk_IBUF_BUFG           | inputter/key_row[4]_i_1_n_0                |                                           |                2 |              5 |         2.50 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[7]_0     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[8]_2     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_4     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[8]_0     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_0     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[8]_3     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_1     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_0    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_5     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[1]         | vga/vga_controller/v_count[9]_i_1_n_0      | inputter/rst_OBUF                         |                5 |             10 |         2.00 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[8]_4     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_3     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_5 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[7]_1     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_6    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_2    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[11]_0    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_5    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_3    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_1 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_3 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_4 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_4    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_8    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[11]_1    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_7    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_0 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[6]_rep_2 |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[10]_1    |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[7]_3     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[9]_2     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[7]_2     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[0]         | vga/vga_debugger/display_addr_reg[8]_1     |                                           |                3 |             10 |         3.33 |
+|  vga/clk_div_IBUF_BUFG[1]         |                                            | inputter/rst_OBUF                         |                7 |             12 |         1.71 |
+|  inputter/clk_IBUF_BUFG           | inputter/sw_counter[0]_i_2_n_0             | inputter/sw_counter_reg[0]_i_1_n_2        |                5 |             20 |         4.00 |
+|  inputter/clk_IBUF_BUFG           | inputter/key_counter[0]_i_1_n_0            | inputter/key_temp2                        |                6 |             21 |         3.50 |
+|  vga/clk_div_IBUF_BUFG[0]         |                                            | vga/vga_debugger/display_addr[11]_i_1_n_0 |                7 |             21 |         3.00 |
+|  inputter/clk_IBUF_BUFG           |                                            |                                           |                4 |             21 |         5.25 |
+|  clock_dividor/clk_IBUF_BUFG      |                                            | inputter/rst_OBUF                         |                7 |             28 |         4.00 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_6[0]    | inputter/rst_OBUF                         |               14 |             32 |         2.29 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_30[0]   | inputter/rst_OBUF                         |               15 |             32 |         2.13 |
+|  clock_dividor/clk_cpu_OBUF_BUFG  | core/ex/dbg_IfId_valid                     | inputter/rst_OBUF                         |                9 |             32 |         3.56 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_7[0]    | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_3[0]    | inputter/rst_OBUF                         |               13 |             32 |         2.46 |
+|  clk_BUFG                         | core/nolabel_line249/E[0]                  | inputter/rst_OBUF                         |               19 |             32 |         1.68 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_13[0]   | inputter/rst_OBUF                         |               14 |             32 |         2.29 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_14[0]   | inputter/rst_OBUF                         |               13 |             32 |         2.46 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_11[0]   | inputter/rst_OBUF                         |               17 |             32 |         1.88 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_17[0]   | inputter/rst_OBUF                         |               15 |             32 |         2.13 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_18[0]   | inputter/rst_OBUF                         |               15 |             32 |         2.13 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_10[0]   | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_19[0]   | inputter/rst_OBUF                         |               11 |             32 |         2.91 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_12[0]   | inputter/rst_OBUF                         |               16 |             32 |         2.00 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_15[0]   | inputter/rst_OBUF                         |               14 |             32 |         2.29 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_2[0]    | inputter/rst_OBUF                         |               17 |             32 |         1.88 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_21[0]   | inputter/rst_OBUF                         |               16 |             32 |         2.00 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_22[0]   | inputter/rst_OBUF                         |               13 |             32 |         2.46 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_16[0]   | inputter/rst_OBUF                         |               17 |             32 |         1.88 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_20[0]   | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_24[0]   | inputter/rst_OBUF                         |               17 |             32 |         1.88 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_25[0]   | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_1[0]    | inputter/rst_OBUF                         |               16 |             32 |         2.00 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_26[0]   | inputter/rst_OBUF                         |               14 |             32 |         2.29 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_27[0]   | inputter/rst_OBUF                         |               19 |             32 |         1.68 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_28[0]   | inputter/rst_OBUF                         |               18 |             32 |         1.78 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_23[0]   | inputter/rst_OBUF                         |               18 |             32 |         1.78 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_4[0]    | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_5[0]    | inputter/rst_OBUF                         |               22 |             32 |         1.45 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_9[0]    | inputter/rst_OBUF                         |               19 |             32 |         1.68 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_29[0]   | inputter/rst_OBUF                         |               11 |             32 |         2.91 |
+|  clk_BUFG                         | core/nolabel_line249/RegWriteW_reg_8[0]    | inputter/rst_OBUF                         |               12 |             32 |         2.67 |
+|  clock_dividor/clk_cpu_OBUF_BUFG  | core/ex/dbg_IfId_valid                     | core/ex/JumpE_reg[0]_0                    |               25 |             66 |         2.64 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[10]_2                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[11]_3                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[11]_2                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[11]_4                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[10]_3                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[11]_1                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[10]_1                 |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[8]_1                  |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[9]_2                  |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/ALUOutM_reg[9]_1                  |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_6                   |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_4                   |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_5                   |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_2                   |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_1                   |                                           |               32 |            128 |         4.00 |
+|  clk_BUFG                         | core/Mem/MemWriteM_reg_3                   |                                           |               32 |            128 |         4.00 |
+|  clock_dividor/clk_cpu_OBUF_BUFG  |                                            | core/ex/FlushE                            |               59 |            164 |         2.78 |
+|  vga/clk_div_IBUF_BUFG[0]         |                                            |                                           |               80 |            320 |         4.00 |
+|  clock_dividor/clk_cpu_OBUF_BUFG  |                                            | inputter/rst_OBUF                         |              149 |            328 |         2.20 |
++-----------------------------------+--------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+
+
